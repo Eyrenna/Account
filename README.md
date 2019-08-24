@@ -1,4 +1,4 @@
-# Acount
+# Account
 
 ## Cuenta Corriente
 Construye una clase de nombre CuentaCorriente que permita almacenar los datos asociados a la cuenta bancaria de un cliente, e interactuar con ellos. Este es nuestro ADT.

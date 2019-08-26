@@ -60,5 +60,8 @@ public class TarjetaPrepago {
     //MÉTODOS
     //Otros
 
+    public void ingresarSaldo(double importe){
+        setSaldo(getSaldo()+importe);
+    }
 
 }

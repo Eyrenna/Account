@@ -18,13 +18,28 @@ consultarCuenta(): visualizará los datos de la cuenta.
 saldoNegativo(): devolverá un valor lógico indicando si la cuenta está o no en números rojos.  
 ** Puedes reutilizar la clase DNI que construimos en clase para definir la clase NIF mediante [herencia], si es que fuese necesario alguna especialización o cambio en la clase DNI. Evalúa si es posible reutilizarla tal cual.  
 
+## Clase Hora
+Construye una clase de nombre Hora que permita almacenar la hora, así como los métodos para manipularla (este es nuestro ADT). Tendrá las siguientes propiedades y métodos:
+### Propiedades (todas ellas privadas):
+hora: de tipo entero (00 - 24)    
+minutos: de tipo entero (00 - 59)  
+segundos: de tipo entero (00 - 59)  
+### Constructor:
+Constructor que, por defecto, inicialice las propiedades de la clase a 0 [programación defensiva].  
+Constructor al que se le pasen como argumentos tres enteros y se los asigne a las propiedades de la clase. Si la cantidad recibida no satisface las restricciones de los valores impuestos a horas, minutos y segundos, el valor que se fija es 0 [Manejo de errores]: devolver un valor neutro, aunque en este caso no lo sea.
+### Métodos de la clase (públicos):
+setHora(): recibe como argumentos tres enteros y se los asigna a las propiedades de la clase. Utiliza el mismo nombre en las variables que reciben los argumentos y en las propiedades de la clase. Este método ha de diseñarse mediante programación por contrato, es decir, debe incluir una precondición: si los valores recibidos no satisfacen las restricciones de los valores impuestos a horas, minutos y segundos, el valor que se establece es 0 [Manejo de errores: devolver un valor neutro, aunque en este caso no lo sea]. Ya que va a ser utilizado en el cosntructor, este precondición podría implementarse en su propia rutina para ser llamada desde este método y desde el “constructor”.  
+getHora(): devuelve la hora como una lista de la forma [horas, minutos, segundos] o como un string de la forma "horas:minutos:segundos".  
+imprmirHora() que muestra en consola la hora en formato string de la forma "horas:minutos:segundos".  
+Métodos set() y get() para todas las propiedades [Abstracción y encapsulamiento].
+
 ## Tarjeta Prepago
 Construye una clase de nombre TarjetaPrepago que permita interactuar con la información almacenada en una tarjeta de telefonía móvil prepago (este es nuestro ADT).
 Esta clase tendrá las siguientes propiedades, métodos y constructores:
 ### Propiedades privadas:
-numeroTeléfono: de tipo string.
-NIF: objeto instancia de la clase DNI que resolvimos en clase**. Se trata de una relación “Has-A” o “Tiene-una”  
-saldo: de tipo double (en euros).  
+numeroTeléfono: de tipo string.  
+NIF: objeto instancia de la clase DNI que resolvimos en clase**. Se trata de una relación “Has-A” o “Tiene-una”    
+saldo: de tipo double (en euros).    
 consumo: objeto instancia de la clase Hora, para almacenar las horas, minutos y segundos consumidos. Se trata de otra relación “Has-A” o “Tiene-una”. Reutiliza la clase Hora que has construído en el ejercicio anterior.
 ### Constructores:
 Constructor que inicializa las propiedades de la clase (programación defensiva).  

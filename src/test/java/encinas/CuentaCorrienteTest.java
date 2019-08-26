@@ -13,6 +13,7 @@ public class CuentaCorrienteTest {
 
     @Before
     public void init() {
+        dniJuan = new DNI("12345678s");
         account = new CuentaCorriente(
                 "Juan",
                 "García Aledro",

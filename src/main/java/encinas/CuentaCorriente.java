@@ -89,4 +89,8 @@ public class CuentaCorriente {
     public void retirarDinero(double importe) {
         setSaldo(getSaldo()-importe);
     }
+
+    public void ingresarDinero(double importe) {
+        setSaldo(getSaldo()+importe);
+    }
 }

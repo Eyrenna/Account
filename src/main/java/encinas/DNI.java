@@ -31,6 +31,7 @@ public class DNI {
 
     //MÉTODOS
     //Otros
+
     public boolean longitudCorrecta(){
         Integer longitud = this.dni.length();
         return (longitud == 9);

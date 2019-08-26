@@ -26,18 +26,19 @@ public enum TablaLetras {
     E(22);
 
 
-    //Atributos
+    //PROPIEDADES
+
     private double indice = 0d;
 
 
-    //Constructor
+    //CONSTRUCTOR
 
     TablaLetras(double indice) {
         this.indice = indice;
     }
 
 
-    //Métodos
+    //MÉTODOS
 
     public double getIndice() {
         return indice;

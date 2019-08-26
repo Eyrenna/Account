@@ -62,6 +62,13 @@ public class AppTest {
     }
 
     @Test
+    public void saldoNegativo(){
+        assertFalse(account.saldoNegativo());
+        account.retirarDinero(1025);
+        assertTrue(account.saldoNegativo());
+    }
+
+    @Test
     public void longitudCorrectaTest() {
         assertTrue(dniJuan.longitudCorrecta());
         assertTrue(dniClau.longitudCorrecta());

@@ -96,8 +96,8 @@ public class CuentaCorriente {
 
     public void consultarCuenta(){
         System.out.print("*************************" + "\n" +
-                         "*******DATOS CUENTA*******" + "\n" +
-                         "**************************" + "\n" +
+                         "*******DATOS CUENTA******" + "\n" +
+                         "*************************" + "\n" +
                          "Nombre: " + getNombre() + "\n" +
                          "Apellidos: " + getApellidos() + "\n" +
                          "Dirección: " + getDireccion() + "\n" +

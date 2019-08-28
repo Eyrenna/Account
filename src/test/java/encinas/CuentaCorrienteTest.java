@@ -38,6 +38,7 @@ public class CuentaCorrienteTest {
         assertEquals(1250, account.getSaldo(), 0.0);
         account.ingresarDinero(25.50);
         assertEquals(1275.50, account.getSaldo(), 0.0);
+        account.consultarCuenta();
     }
 
     @Test

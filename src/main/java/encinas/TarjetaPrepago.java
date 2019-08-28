@@ -64,4 +64,8 @@ public class TarjetaPrepago {
         setSaldo(getSaldo()+importe);
     }
 
+    public void enviarMensaje(Integer mensajes){
+        setSaldo(getSaldo()-(0.09*mensajes));
+    }
+
 }

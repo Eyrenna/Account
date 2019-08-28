@@ -1,5 +1,6 @@
 package encinas;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,6 +22,15 @@ public class TarjetaPrepagoTest {
     public void ingresarSaldoTest(){
         tarjeta.ingresarSaldo(10.0);
         assertEquals(15.0,tarjeta.getSaldo(),0.0);
+    }
+
+    @Test
+    public void enviarMensajeTest(){
+        tarjeta.enviarMensaje(9);
+        assertEquals(4.19, tarjeta.getSaldo(), 0.0);
+        tarjeta.ingresarSaldo(10.0);
+        tarjeta.enviarMensaje(2);
+        assertEquals(14.01, tarjeta.getSaldo(), 0.001);
     }
 
 

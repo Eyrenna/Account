@@ -38,16 +38,18 @@ public class TarjetaPrepagoTest {
 
     @Test
     public void realizarLlamadaTest(){
-        tarjeta.realizarLlamada(40);
-        assertEquals(4.45, tarjeta.getSaldo(), 0.001);
-        assertEquals(40, tarjeta.getConsumo().getMinutos(), 0.001);
+        tarjeta.ingresarSaldo(20);
+        tarjeta.realizarLlamada(2400);
+        assertEquals(0.85, tarjeta.getSaldo(), 0.001);
         assertEquals(0, tarjeta.getConsumo().getHoras(), 0.001);
+        assertEquals(40, tarjeta.getConsumo().getMinutos(), 0.001);
         assertEquals(0, tarjeta.getConsumo().getSegundos(), 0.001);
-        tarjeta.realizarLlamada(25);
-        assertEquals(4.05, tarjeta.getSaldo(), 0.001);
-        assertEquals(05, tarjeta.getConsumo().getMinutos(), 0.001);
+        tarjeta.ingresarSaldo(50);
+        tarjeta.realizarLlamada(3750);
+        assertEquals(13.20, tarjeta.getSaldo(), 0.001);
         assertEquals(1, tarjeta.getConsumo().getHoras(), 0.001);
-        assertEquals(0, tarjeta.getConsumo().getSegundos(), 0.001);
+        assertEquals(42, tarjeta.getConsumo().getMinutos(), 0.001);
+        assertEquals(30, tarjeta.getConsumo().getSegundos(), 0.001);
         tarjeta.visualizarTarjeta();
     }
 

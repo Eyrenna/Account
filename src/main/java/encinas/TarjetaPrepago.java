@@ -68,15 +68,11 @@ public class TarjetaPrepago {
         setSaldo(getSaldo() - (0.09*mensajesEnviados));
     }
 
-    public void realizarLlamada(Integer minutosHablados){
-        setSaldo(getSaldo() - (0.15 + (0.01 * minutosHablados)));
-        if((getConsumo().getMinutos() + minutosHablados) <= 59){
-            getConsumo().setMinutos(getConsumo().getMinutos() + minutosHablados);
-        }else{
-            getConsumo().setHoras(getConsumo().getHoras() + ((getConsumo().getMinutos() + minutosHablados) / 60));
-            getConsumo().setMinutos((getConsumo().getMinutos() + minutosHablados) % 60);
-        }
-
+    public void realizarLlamada(Integer segundosHablados){
+        setSaldo(getSaldo() - (0.15 + (0.01 * segundosHablados)));
+        consumoToSegundos();
+        consumo.setSegundos(consumo.getSegundos() + segundosHablados);
+        segundosToConsumo();
     }
 
     public void visualizarTarjeta(){
@@ -87,6 +83,23 @@ public class TarjetaPrepago {
                          "DNI: " + getDni().getDni() + "\n" +
                          "Saldo: " + getSaldo() + "\n" +
                          "Consumo: " + getConsumo().getHora());
+    }
+
+
+    //MÉTODOS
+    //Otros - PRIVADOS
+
+    private void consumoToSegundos(){
+        Integer horasToSegundos = consumo.getHoras() * 3600;
+        Integer minutosToSegundos = consumo.getMinutos() * 60;
+        consumo.setSegundos(consumo.getSegundos() + minutosToSegundos + horasToSegundos);
+    }
+
+    private void segundosToConsumo(){
+        consumo.setHoras(consumo.getSegundos() / 3600);
+        consumo.setSegundos(consumo.getSegundos() % 3600);
+        consumo.setMinutos(consumo.getSegundos() / 60);
+        consumo.setSegundos(consumo.getSegundos() % 60);
     }
 
 }

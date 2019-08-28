@@ -51,7 +51,7 @@ public class Fecha {
     //Otros
 
     public void setFecha(Integer dia, Integer mes, Integer anno) {
-        if(((dia < 1) && (dia > 31)) || ((mes < 1) && (mes > 12)) || (anno < 1900)){
+        if(((dia < 1) && (dia > 31)) || ((mes < 1) && (mes > 12)) || (anno < 1900) || (anno > 3000)){
             setDia(1);
             setMes(1);
             setAnno(1900);

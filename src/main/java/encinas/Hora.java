@@ -62,7 +62,7 @@ public class Hora {
     }
 
     public String getHora() {
-        return "Horas: " + getHoras() + " Minutos: " + getMinutos() + " Segundos: " + getSegundos();
+        return getHoras() + " Horas " + getMinutos() + " Minutos " + getSegundos() + " Segundos";
     }
 
     public void imprimirHora(){

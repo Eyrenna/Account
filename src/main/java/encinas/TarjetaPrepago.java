@@ -79,4 +79,14 @@ public class TarjetaPrepago {
 
     }
 
+    public void visualizarTarjeta(){
+        System.out.print("*************************" + "\n" +
+                         "******DATOS TARJETA******" + "\n" +
+                         "*************************" + "\n" +
+                         "Número: " + getNumeroTelefono() + "\n" +
+                         "DNI: " + getDni().getDni() + "\n" +
+                         "Saldo: " + getSaldo() + "\n" +
+                         "Consumo: " + getConsumo().getHora());
+    }
+
 }

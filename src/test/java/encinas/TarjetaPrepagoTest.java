@@ -48,6 +48,7 @@ public class TarjetaPrepagoTest {
         assertEquals(05, tarjeta.getConsumo().getMinutos(), 0.001);
         assertEquals(1, tarjeta.getConsumo().getHoras(), 0.001);
         assertEquals(0, tarjeta.getConsumo().getSegundos(), 0.001);
+        tarjeta.visualizarTarjeta();
     }
 
 

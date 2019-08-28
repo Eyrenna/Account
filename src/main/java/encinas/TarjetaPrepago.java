@@ -61,11 +61,22 @@ public class TarjetaPrepago {
     //Otros
 
     public void ingresarSaldo(double importe){
-        setSaldo(getSaldo()+importe);
+        setSaldo(getSaldo() + importe);
     }
 
-    public void enviarMensaje(Integer mensajes){
-        setSaldo(getSaldo()-(0.09*mensajes));
+    public void enviarMensaje(Integer mensajesEnviados){
+        setSaldo(getSaldo() - (0.09*mensajesEnviados));
+    }
+
+    public void realizarLlamada(Integer minutosHablados){
+        setSaldo(getSaldo() - (0.15 + (0.01 * minutosHablados)));
+        if((getConsumo().getMinutos() + minutosHablados) <= 59){
+            getConsumo().setMinutos(getConsumo().getMinutos() + minutosHablados);
+        }else{
+            getConsumo().setHoras(getConsumo().getHoras() + ((getConsumo().getMinutos() + minutosHablados) / 60));
+            getConsumo().setMinutos((getConsumo().getMinutos() + minutosHablados) % 60);
+        }
+
     }
 
 }

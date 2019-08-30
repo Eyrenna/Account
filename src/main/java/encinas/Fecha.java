@@ -1,5 +1,7 @@
 package encinas;
 
+import java.lang.reflect.Array;
+
 public class Fecha {
 
     //PROPIEDADES
@@ -97,5 +99,19 @@ public class Fecha {
                 dias -= 1;
             }
         }
+    }
+
+    public void imprimirFecha(){
+        System.out.print("Fecha: " + getDia() + "/" + mesLetra() + "/" + getAnno());
+    }
+
+
+    //MÉTODOS
+    //Otros PRIVADOS
+
+    private String mesLetra(){
+        String meses[] = {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                          "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"};
+        return meses[getMes() - 1];
     }
 }

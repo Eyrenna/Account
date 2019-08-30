@@ -78,7 +78,7 @@ public class Fecha {
                     diaLimite = 30;
                 }else{
                     if(getMes() == 2){
-                        if(((getAnno() - 1900) % 4) == 0){
+                        if(((getAnno() - 1896) % 4) == 0){
                             diaLimite = 29;
                         }else {
                             diaLimite = 28;

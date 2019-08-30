@@ -61,4 +61,41 @@ public class Fecha {
             setAnno(anno);
         }
     }
+
+    public void incrementarFecha(Integer dias){
+        while(dias > 0){
+            Integer diaLimite;
+            Integer proximoMes = getMes() + 1;
+            Integer proximoAnno = getAnno() + 0;
+            if(getMes() == 12) {
+                diaLimite = 31;
+                proximoMes = 1;
+                proximoAnno = getAnno() + 1;
+            }else{
+                if(getMes() == 4 || getMes() == 6 || getMes() == 9 || getMes() == 11) {
+                    diaLimite = 30;
+                }else{
+                    if(getMes() == 2){
+                        if(((getAnno() - 1900) % 4) == 0){
+                            diaLimite = 29;
+                        }else {
+                            diaLimite = 28;
+                        }
+                    }else{
+                        diaLimite = 31;
+                    }
+                }
+            }
+            while(getDia() < diaLimite && dias != 0){
+                setDia(getDia() + 1);
+                dias -= 1;
+            }
+            if(getDia() == diaLimite && dias != 0){
+                setDia(1);
+                setMes(proximoMes);
+                setAnno(proximoAnno);
+                dias -= 1;
+            }
+        }
+    }
 }
